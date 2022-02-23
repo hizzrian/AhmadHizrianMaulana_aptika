@@ -28,11 +28,11 @@
 
 	<div class="container">
 		<div class="row">
-			@foreach ($products->skip(1) as $product)
+			@foreach ($products as $product)
 			<div class="col-md-4 mb-3">		
 				<div class="card">
 					<div class="position-absolute px-3 py-2" style="background-color:rgba(0, 0, 0, 0.7)"><a href="#" class="text-white text-decoration-none">
-						{{ $product->category->name }}
+						{{ $product->title }} 
 						</a>
 					</div>
 					@if($product -> image)

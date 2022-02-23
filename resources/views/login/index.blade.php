@@ -26,6 +26,6 @@
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
   </form>
-  <small class="d-block text-center">Not Registered ? <a href="/register">Register now</a></small>
+  <!-- <small class="d-block text-center">Not Registered ? <a href="/register">Register now</a></small> -->
 </main>
 @endsection

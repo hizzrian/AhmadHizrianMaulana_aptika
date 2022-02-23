@@ -25,13 +25,13 @@ class ProductFactory extends Factory
                             ->map(fn($p) => '<p>' . $p . '</p>')
                             ->implode(' '),
             'sku' => $this->faker->numberBetween(1, 100),
-            'price' => $this->faker->randomFloat(2, 1, 100),
+            'price' => $this->faker->randomFloat(2, 1000, 100000),
             'discount' => $this->faker->randomFloat(2, 1, 100),
-            'discount_price' => $this->faker->randomFloat(2, 1, 100),
+            'discount_price' => $this->faker->randomFloat(2, 1, 10000),
             'weight' => $this->faker->randomFloat(2, 1, 100),
             'stock' => $this->faker->numberBetween(1, 100),
             'category_id' => mt_rand(1,3),
-            'user_id' => mt_rand(1,3),
+            'user_id' => 1,
         ];
     }
 }

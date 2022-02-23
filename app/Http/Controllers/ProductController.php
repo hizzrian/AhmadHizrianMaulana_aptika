@@ -14,7 +14,7 @@ class ProductController extends Controller
             "title" => "All Products",
             "active" => 'products',
             // "products" => Product::all()
-            "products" => Product::latest()->filter(request(['search']))->paginate(7)
+            "products" => Product::latest()->filter(request(['search']))->paginate(6)
         ]);
     }
 
