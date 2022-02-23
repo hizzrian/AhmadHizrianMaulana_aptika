@@ -19,12 +19,9 @@ use App\Http\Controllers\DashboardProductController;
 |
 */
 
-Route::get('/', function () {
-    return view('home', [
-        "title" => "Home",
-        'active' => 'home'
-    ]);
-});
+Route::get('/', [ProductController::class, 'index']);
+//get all products
+Route::get('/products', [ProductController::class, 'index']);
 
 // Route::get('/about', function(){
 //     return View('about', [
@@ -44,8 +41,6 @@ Route::get('/', function () {
 
 
 
-//get all products
-Route::get('/products', [ProductController::class, 'index']);
 //get all categories
 // Route::get('/categories', function(){
 //     return View('categories', [
@@ -60,8 +55,8 @@ Route::get('/products/{product:slug}', [ProductController::class, 'getOneProduct
 //halaman category
 Route::get('/categories/{category:slug}', function(Category $category) {
     return View('products', [
-        "title" => "Product by category:$category->name",
         'active' => 'categories',
+        "title" => "Product by category:$category->name",
         "products" => $category->products->load('user', 'category')
     ]);
 });
